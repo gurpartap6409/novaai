@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaAI — Work Smarter with AI</title>
+  <meta name="description" content="NovaAI offers AI-powered productivity tools to help you work smarter, automate tasks, and gain real-time insights. Join the future of work." />
+  <meta name="keywords" content="AI, productivity, automation, insights, integration, NovaAI" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Particle Canvas Background -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Animated Gradient Orbs -->
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav id="navbar" class="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo" id="nav-logo">
+        <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00d4ff" />
+              <stop offset="100%" stop-color="#7b2fff" />
+            </linearGradient>
+          </defs>
+          <path d="M20 2L36 12V28L20 38L4 28V12L20 2Z" stroke="url(#logoGrad)" stroke-width="2.5" fill="none"/>
+          <path d="M20 10L28 15V25L20 30L12 25V15L20 10Z" fill="url(#logoGrad)" opacity="0.3"/>
+          <circle cx="20" cy="20" r="4" fill="url(#logoGrad)"/>
+        </svg>
+        <span>Nova<span class="logo-accent">AI</span></span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#products" class="nav-link">Products</a></li>
+        <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+        <li><a href="#newsletter" class="nav-link">Newsletter</a></li>
+      </ul>
+      <a href="#hero" class="nav-cta" id="nav-cta">Get Started</a>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero-content reveal">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Powered by Next-Gen AI
+      </div>
+      <h1 class="hero-title">
+        Work <span class="gradient-text">Smarter</span><br />with AI
+      </h1>
+      <p class="hero-subtitle">
+        Supercharge your workflow with intelligent automation, real-time analytics,
+        and seamless integrations — all in one platform built for the future.
+      </p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-primary" id="hero-cta">
+          <span>Get Started</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="#features" class="btn btn-ghost" id="hero-learn-more">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="5 3 19 12 5 21 5 3"/>
+          </svg>
+          <span>Learn More</span>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number" data-target="50">0</span><span class="stat-suffix">K+</span>
+          <span class="stat-label">Active Users</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number" data-target="99">0</span><span class="stat-suffix">%</span>
+          <span class="stat-label">Uptime</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number" data-target="4">0</span><span class="stat-suffix">.9★</span>
+          <span class="stat-label">User Rating</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <div class="hero-glow"></div>
+      <div class="dashboard-preview">
+        <div class="dash-header">
+          <div class="dash-dots"><span></span><span></span><span></span></div>
+          <span class="dash-title">NovaAI Dashboard</span>
+        </div>
+        <div class="dash-body">
+          <div class="dash-chart">
+            <div class="chart-bar" style="--h:60%;--delay:0s"></div>
+            <div class="chart-bar" style="--h:85%;--delay:0.1s"></div>
+            <div class="chart-bar" style="--h:45%;--delay:0.2s"></div>
+            <div class="chart-bar" style="--h:95%;--delay:0.3s"></div>
+            <div class="chart-bar" style="--h:70%;--delay:0.4s"></div>
+            <div class="chart-bar" style="--h:80%;--delay:0.5s"></div>
+            <div class="chart-bar" style="--h:55%;--delay:0.6s"></div>
+          </div>
+          <div class="dash-metrics">
+            <div class="metric">
+              <span class="metric-label">Productivity</span>
+              <span class="metric-value gradient-text">+47%</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Tasks Automated</span>
+              <span class="metric-value gradient-text">1,284</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Time Saved</span>
+              <span class="metric-value gradient-text">36h/wk</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">Features</span>
+        <h2 class="section-title">Why Teams Choose <span class="gradient-text">NovaAI</span></h2>
+        <p class="section-subtitle">Three pillars that redefine how you work — powered by cutting-edge artificial intelligence.</p>
+      </div>
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card reveal" id="feature-automation">
+          <div class="feature-icon-wrapper">
+            <div class="feature-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad1)" stroke-width="1.5">
+                <defs><linearGradient id="iconGrad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00d4ff"/><stop offset="100%" stop-color="#7b2fff"/></linearGradient></defs>
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="feature-title">Smart Automation</h3>
+          <p class="feature-desc">Automate repetitive tasks with AI-driven workflows. From emails to data entry, let NovaAI handle the mundane so you can focus on what matters.</p>
+          <a href="#" class="feature-link">
+            Learn more
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <!-- Feature 2 -->
+        <div class="feature-card reveal" id="feature-insights">
+          <div class="feature-icon-wrapper">
+            <div class="feature-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad2)" stroke-width="1.5">
+                <defs><linearGradient id="iconGrad2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00d4ff"/><stop offset="100%" stop-color="#7b2fff"/></linearGradient></defs>
+                <path d="M21 12c0 1.2-4 6-9 6s-9-4.8-9-6c0-1.2 4-6 9-6s9 4.8 9 6z"/>
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M3 3l18 18" stroke-dasharray="2 3"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="feature-title">Real-Time Insights</h3>
+          <p class="feature-desc">Get actionable intelligence at your fingertips. Our AI analyzes patterns across your data to deliver predictive insights and smart recommendations.</p>
+          <a href="#" class="feature-link">
+            Learn more
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <!-- Feature 3 -->
+        <div class="feature-card reveal" id="feature-integration">
+          <div class="feature-icon-wrapper">
+            <div class="feature-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="url(#iconGrad3)" stroke-width="1.5">
+                <defs><linearGradient id="iconGrad3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00d4ff"/><stop offset="100%" stop-color="#7b2fff"/></linearGradient></defs>
+                <rect x="2" y="6" width="8" height="8" rx="2"/>
+                <rect x="14" y="6" width="8" height="8" rx="2"/>
+                <path d="M10 10h4"/>
+                <path d="M6 14v4a2 2 0 002 2h8a2 2 0 002-2v-4"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="feature-title">Seamless Integration</h3>
+          <p class="feature-desc">Connect NovaAI with 200+ tools you already love — Slack, Notion, Google Workspace, and more. Zero friction, maximum synergy.</p>
+          <a href="#" class="feature-link">
+            Learn more
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products / Pricing Section -->
+  <section id="products" class="products">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">Products</span>
+        <h2 class="section-title">Choose Your <span class="gradient-text">Plan</span></h2>
+        <p class="section-subtitle">Flexible pricing for teams of all sizes. Switch plans anytime.</p>
+        <!-- Pricing Toggle -->
+        <div class="pricing-toggle" id="pricing-toggle">
+          <span class="toggle-label" id="toggle-monthly">Monthly</span>
+          <button class="toggle-switch" id="toggle-switch" aria-label="Toggle pricing period">
+            <span class="toggle-knob"></span>
+          </button>
+          <span class="toggle-label" id="toggle-yearly">
+            Yearly
+            <span class="toggle-badge">Save 20%</span>
+          </span>
+        </div>
+      </div>
+      <div class="products-grid">
+        <!-- Product 1: Starter -->
+        <div class="product-card reveal" id="product-starter">
+          <div class="product-tier">Starter</div>
+          <h3 class="product-name">NovaAI Lite</h3>
+          <p class="product-desc">Perfect for individuals getting started with AI-powered productivity.</p>
+          <div class="product-price">
+            <span class="price-currency">$</span>
+            <span class="price-amount" data-monthly="9" data-yearly="7">9</span>
+            <span class="price-period">/ month</span>
+          </div>
+          <ul class="product-features-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              5 AI Automations / day
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              Basic Analytics Dashboard
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              3 Integrations
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              Email Support
+            </li>
+          </ul>
+          <a href="#" class="btn btn-outline product-cta" id="cta-starter">Try Now</a>
+        </div>
+        <!-- Product 2: Pro (Featured) -->
+        <div class="product-card featured reveal" id="product-pro">
+          <div class="product-badge">Most Popular</div>
+          <div class="product-tier">Professional</div>
+          <h3 class="product-name">NovaAI Pro</h3>
+          <p class="product-desc">For growing teams that need advanced AI features and collaboration.</p>
+          <div class="product-price">
+            <span class="price-currency">$</span>
+            <span class="price-amount" data-monthly="29" data-yearly="23">29</span>
+            <span class="price-period">/ month</span>
+          </div>
+          <ul class="product-features-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              Unlimited Automations
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              Advanced Analytics + AI Insights
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              50+ Integrations
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              Priority Support
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              Team Collaboration (up to 10)
+            </li>
+          </ul>
+          <a href="#" class="btn btn-primary product-cta" id="cta-pro">Try Now</a>
+        </div>
+        <!-- Product 3: Enterprise -->
+        <div class="product-card reveal" id="product-enterprise">
+          <div class="product-tier">Enterprise</div>
+          <h3 class="product-name">NovaAI Max</h3>
+          <p class="product-desc">Full-scale AI deployment with custom models, SSO, and dedicated support.</p>
+          <div class="product-price">
+            <span class="price-currency">$</span>
+            <span class="price-amount" data-monthly="79" data-yearly="63">79</span>
+            <span class="price-period">/ month</span>
+          </div>
+          <ul class="product-features-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              Everything in Pro
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              Custom AI Model Training
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              200+ Integrations + API Access
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              SSO & Advanced Security
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              Dedicated Account Manager
+            </li>
+          </ul>
+          <a href="#" class="btn btn-outline product-cta" id="cta-enterprise">Try Now</a>
+        </div>
+        <!-- Product 4: Custom -->
+        <div class="product-card reveal" id="product-custom">
+          <div class="product-tier">Custom</div>
+          <h3 class="product-name">NovaAI Labs</h3>
+          <p class="product-desc">Bespoke AI solutions for enterprises with unique requirements and scale.</p>
+          <div class="product-price">
+            <span class="price-amount custom-price">Let's Talk</span>
+          </div>
+          <ul class="product-features-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              Everything in Enterprise
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              White-Label Solutions
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              On-Premise Deployment
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              24/7 Premium Support
+            </li>
+          </ul>
+          <a href="#" class="btn btn-outline product-cta" id="cta-custom">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">Testimonials</span>
+        <h2 class="section-title">Loved by <span class="gradient-text">Innovators</span></h2>
+        <p class="section-subtitle">See what founders and professionals are saying about NovaAI.</p>
+      </div>
+      <div class="testimonials-grid">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card reveal" id="testimonial-1">
+          <div class="testimonial-stars">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-text">"NovaAI completely transformed how our team operates. We cut meeting prep time by 70% and our productivity metrics went through the roof. It's like having an extra team member who never sleeps."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #00d4ff, #7b2fff);">
+              <span>SK</span>
+            </div>
+            <div class="author-info">
+              <span class="author-name">Sarah Kim</span>
+              <span class="author-role">CEO & Co-founder, Luminary Labs</span>
+            </div>
+          </div>
+        </div>
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card reveal" id="testimonial-2">
+          <div class="testimonial-stars">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-text">"The real-time insights feature alone justified the subscription. We spotted a market trend 2 weeks before our competitors and pivoted instantly. NovaAI is a game-changer for data-driven teams."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #7b2fff, #ff2daa);">
+              <span>JR</span>
+            </div>
+            <div class="author-info">
+              <span class="author-name">James Rodriguez</span>
+              <span class="author-role">Head of Product, FinScale</span>
+            </div>
+          </div>
+        </div>
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card reveal" id="testimonial-3">
+          <div class="testimonial-stars">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFD700"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-text">"As a solo founder I needed tools that scale with me. NovaAI's seamless integrations connected all my scattered workflows into one beautiful dashboard. I saved 15+ hours a week from day one."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #00d4ff, #00ff88);">
+              <span>AP</span>
+            </div>
+            <div class="author-info">
+              <span class="author-name">Aisha Patel</span>
+              <span class="author-role">Founder, GreenThread</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section id="newsletter" class="newsletter">
+    <div class="section-container">
+      <div class="newsletter-wrapper reveal">
+        <div class="newsletter-glow"></div>
+        <div class="newsletter-content">
+          <span class="section-tag">Stay Updated</span>
+          <h2 class="section-title">Join the <span class="gradient-text">Waitlist</span></h2>
+          <p class="section-subtitle">Be the first to access new features, AI research updates, and exclusive early-adopter perks.</p>
+          <form class="newsletter-form" id="newsletter-form">
+            <div class="input-wrapper">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5">
+                <rect x="2" y="4" width="20" height="16" rx="3"/>
+                <path d="M22 7l-10 7L2 7"/>
+              </svg>
+              <input type="email" id="newsletter-email" placeholder="Enter your email address" required autocomplete="email" />
+            </div>
+            <button type="submit" class="btn btn-primary" id="newsletter-submit">
+              <span>Join Waitlist</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </form>
+          <p class="newsletter-note">No spam. Unsubscribe anytime. Join 12,000+ subscribers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <a href="#" class="nav-logo footer-logo">
+            <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 2L36 12V28L20 38L4 28V12L20 2Z" stroke="url(#logoGrad)" stroke-width="2.5" fill="none"/>
+              <path d="M20 10L28 15V25L20 30L12 25V15L20 10Z" fill="url(#logoGrad)" opacity="0.3"/>
+              <circle cx="20" cy="20" r="4" fill="url(#logoGrad)"/>
+            </svg>
+            <span>Nova<span class="logo-accent">AI</span></span>
+          </a>
+          <p class="footer-tagline">AI-powered productivity tools for the modern workforce. Work smarter, not harder.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-link" id="social-twitter" aria-label="Twitter">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-link" id="social-linkedin" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="#" class="social-link" id="social-github" aria-label="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            </a>
+            <a href="#" class="social-link" id="social-discord" aria-label="Discord">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189z"/></svg>
+            </a>
+          </div>
+        </div>
+        <!-- Links Columns -->
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Product</h4>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#products">Pricing</a></li>
+            <li><a href="#">Integrations</a></li>
+            <li><a href="#">Changelog</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Company</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Press Kit</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Resources</h4>
+          <ul>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">API Reference</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 NovaAI. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
