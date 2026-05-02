@@ -371,4 +371,21 @@
     });
   });
 
+  // ---- Chatbot Popup Toggle ----
+  const chatbotWidget = document.getElementById('chatbot-widget');
+  const chatbotToggle = document.getElementById('chatbot-toggle');
+  const chatbotClose = document.getElementById('chatbot-close');
+
+  if (chatbotToggle && chatbotWidget) {
+    chatbotToggle.addEventListener('click', () => {
+      chatbotWidget.classList.toggle('open');
+    });
+  }
+
+  if (chatbotClose && chatbotWidget) {
+    chatbotClose.addEventListener('click', () => {
+      chatbotWidget.classList.remove('open');
+    });
+  }
+
 })();
